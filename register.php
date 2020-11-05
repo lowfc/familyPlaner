@@ -55,29 +55,26 @@ if (isset($db['go_reg']))
 ?>
 
 <link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <div class="bigBlock">       
-	<p class="regHeader">Регистрация</p>
-	<div>
+	<div class="f_center">
+		<h1>Регистрация</h1>
 		<form action="register.php" method="POST">
-			<p class="miniHeader">Телефон</p>
-			<input class="entryField" type="text" name="phone" placeholder="+71234567890" value=""><br>
-			<p class="miniHeader">Пароль</p>
+			<p class="miniHeader">Телефон:</p>
+			<input class="entryField" type="text" name="phone" value=""><br>
+			<p class="miniHeader">Пароль:</p>
 			<input class="entryField" type="password" name="password" placeholder="Пароль (От 8 до 20 символов)" value=""><br>
 			<input class="entryField" type="password" name="reppassword" placeholder="Подтвердите пароль" value=""><br>
-			<p class="miniHeader">Ваши данные</p>
+			<p class="miniHeader">Ваши данные:</p>
 			<input class="entryField" type="text" name="last_name" placeholder="Фамилия" value=""><br>
 			<input class="entryField" type="text" name="name" placeholder="Имя" value=""><br>
 			<input class="entryField" type="text" name="middle_name" placeholder="Отчество (можно оставить пустым)" value=""><br>
-			<p class="miniHeader">Дата рождения</p>
+			<p class="miniHeader">Дата рождения:</p>
 			<input class="entryField" name="date_of_born" type="date" required><br>
-			<p class="miniHeader">Статус в Семье</p>
+			<p class="miniHeader">Роль в Семье:</p>
 			<input class="entryField" type="text" name="family_status" placeholder="Например: Мама" value=""><br>
-			<p class="miniHeader">Интеграция с ВК</p>
-			<input class="entryField" type="text" name="vk" placeholder="Ссылка на профиль ВК (можно оставить пустым)" value=""><br>
-			<p>
-				<button class="regButton" name="go_reg" type="submit">Регистрация</button>
-			</p>		
+			<button class="regButton" name="go_reg" type="submit">Регистрация</button>
 		</form>
-		<a class="btn_register" href="/index.php">Вернуться на главную</a><br><br><br>
+		<a class="out" href="/index.php">Вернуться на главную</a><br><br><br>
 	</div>
 </div>

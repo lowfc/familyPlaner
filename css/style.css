@@ -1,21 +1,66 @@
 
-html, body
-{
-    background-color: #121212;
+html, body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;	
+	display: flex;
+	flex-direction: column;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+* {
+	font-size: 14px;
+	font-family: "Raleway";
+	padding: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+}
+*, *:before, *:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active {outline: none;}
+a:focus, a:active {outline: none;}
+nav, footer, header, aside {display: block;}
+input, button, textarea {font-family: inherit;}
+input::-ms-clear {display: none;}
+button, a {cursor: pointer;}
+button::-moz-focus-inner {padding:0; border:0;}
+a, a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+ul li {list-style: none;}
+img {vertical-align: top;}
+
+h1, h2, h3, h4, h5, h6 {font-size:inherit; font-weight: 400;}
+
+h1{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 70px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.f_center {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
 }
 
 .bigBlock
 {
-    background-color: #202020;
-    width: 60%;
-    height: 70%;
-    margin-left: 20%;
+    background-color: white;
+    margin-left: 50px;
     border-radius: 15px;
 }
+
 .regHeader
 {
-    color: darkgrey;
-    font-family: Verdana;
+    color: black;
     font-size: 25px;
     text-align: center;
     padding-top: 20px;
@@ -23,37 +68,70 @@ html, body
 
 .miniheader
 {
-    color: darkgrey;
-    font-family: Verdana;
+    margin-top: 7px;
+    margin-bottom: 15px;
+    color: black;
     font-size: 15px;
     height:6px;
 }
 
+a{
+    font-size: 18px;
+    color: black;
+    padding: 15px;
+}
+
+button {
+    background-color: rgb(134, 28, 134);
+    border: 0;
+    font-size: 17px;
+    border-radius: 30px;
+    color: white; 
+    height: 35px;
+    width: 125px;
+}
+
+a:hover {
+    transition: 0.25s;
+    transform: scale(0.9);
+    font-size: 17px;
+}
+
+a:active{
+    color: gold;
+}
+
 input::-webkit-input-placeholder 
 {
-    color: rgb(77, 77, 77);
-} 
+    color: rgb(57, 176, 212);
+}
 
 .entryField
 {
-    background-color: rgb(117, 117, 117);
-    border: 0;
-    font-size: 15px;
-    border-radius: 5px;
-    color: rgb(0, 0, 0);
+    font-size: 16px;
+    padding: 10px;
+    display: block;
     width: 300px;
-    height: 30px;
-    margin-top: 5px;
+    height: 35px;
+    border: 1px solid black;
 }
 
 .regButton
 {
-    background-color: rgb(117, 117, 117);
-    border: 0;
-    font-size: 15px;
-    border-radius: 5px;
-    color: rgb(0, 0, 0); 
-    height: 25px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 17px;
+    margin-top: 10px;
+}
+
+.out{
+    font-size: 18px;
+    color: black;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    display: block;
 }
 
 .errBlock
@@ -67,7 +145,30 @@ input::-webkit-input-placeholder
 
 .errBlock > p{
     color: darkgrey;
-    font-family: Verdana;
     font-size: 15px;
     text-align: center;
+}
+
+/*_________________________________________________Ниже стили для index (кроме шрифтов и ссылок с hover, они глобальны)(сверху глобальные и для register)___________________*/
+
+
+.form_auth{
+    margin-top: 60px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    display: block;
+}
+
+.btn_register{
+    font-size: 18px;
+    margin-left: 50px;
+    background-color: #f3f3f3;
+    border-radius: 20px;
+}
+
+.btn_auth{
+    font-size: 18px;
+    background-color: #f3f3f3;
+    border-radius: 20px;
 }
