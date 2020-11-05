@@ -1,0 +1,73 @@
+
+html, body
+{
+    background-color: #121212;
+}
+
+.bigBlock
+{
+    background-color: #202020;
+    width: 60%;
+    height: 70%;
+    margin-left: 20%;
+    border-radius: 15px;
+}
+.regHeader
+{
+    color: darkgrey;
+    font-family: Verdana;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.miniheader
+{
+    color: darkgrey;
+    font-family: Verdana;
+    font-size: 15px;
+    height:5px;
+}
+
+input::-webkit-input-placeholder 
+{
+    color: rgb(77, 77, 77);
+} 
+
+.entryField
+{
+    background-color: rgb(117, 117, 117);
+    border: 0;
+    font-size: 15px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    width: 300px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.regButton
+{
+    background-color: rgb(117, 117, 117);
+    border: 0;
+    font-size: 15px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0); 
+    height: 25px;
+}
+
+.errBlock
+{
+    background-color: brown;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.errBlock > p{
+    color: darkgrey;
+    font-family: Verdana;
+    font-size: 15px;
+    text-align: center;
+}
