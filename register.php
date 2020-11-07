@@ -1,5 +1,5 @@
 <?php
-require 'db.php'; 
+require 'db.php';
 $db = $_POST;
 if (isset($db['go_reg']))
 {
@@ -38,6 +38,11 @@ if (isset($db['go_reg']))
 		$tableUsers->vk = trim($db['vk']);
 		$tableUsers->user_group = 'not confirmed';
 		R::store($tableUsers);
+		echo "
+				<div class = 'succBlock'>
+				<p>Успешная регистрация!</p>
+				</div>
+				";
 	}
 	else{
 		$marg_incrementer = 0;
@@ -61,7 +66,7 @@ if (isset($db['go_reg']))
 		<h1>Регистрация</h1>
 		<form action="register.php" method="POST">
 			<p class="miniHeader">Телефон:</p>
-			<input class="entryField" type="text" name="phone" value=""><br>
+			<input class="entryField" type="text" name="phone" placeholder="Он будет использован как логин"><br>
 			<p class="miniHeader">Пароль:</p>
 			<input class="entryField" type="password" name="password" placeholder="Пароль (От 8 до 20 символов)" value=""><br>
 			<input class="entryField" type="password" name="reppassword" placeholder="Подтвердите пароль" value=""><br>

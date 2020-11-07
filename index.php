@@ -5,8 +5,9 @@
 	<p class="regHeader">Зарегестрируйтесь или войдите в аккаунт для продолжения</p>
 		<div class="p_card_full_size">
 			<div class="form_auth">
-				<a class="btn_auth" href="/login.php">Войти</a> 
 				<a class="btn_register" href="/register.php">Зарегистрироваться</a>
+				<a class="btn_register" href="/login.php">Войти</a>
 			</div>
 		</div>
 </div>
+

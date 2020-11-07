@@ -1,4 +1,1 @@
-<?php
-  require 'libs/rb.php';
-  R::setup( 'mysql:host=localhost;dbname=familyplaner',
-         'root', '');
+<?php require 'libs/rb.php'; R::setup( 'mysql:host=localhost;dbname=familyplaner', 'root', '');session_start();?>
