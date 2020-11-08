@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require 'logout.php';
 $db = $_POST;
 if (isset($db['go_reg']))
 {
@@ -35,7 +35,7 @@ if (isset($db['go_reg']))
 		$tableUsers->password = password_hash($db['password'], PASSWORD_DEFAULT);
 		$tableUsers->family_status = trim($db['family_status']);
 		$tableUsers->deate_of_born = trim($db['date_of_born']);
-		$tableUsers->vk = trim($db['vk']);
+		$tableUsers->avat = '/res/avats/default.jpg';
 		$tableUsers->user_group = 'not confirmed';
 		R::store($tableUsers);
 		echo "
@@ -66,7 +66,7 @@ if (isset($db['go_reg']))
 		<h1>Регистрация</h1>
 		<form action="register.php" method="POST">
 			<p class="miniHeader">Телефон:</p>
-			<input class="entryField" type="text" name="phone" placeholder="Он будет использован как логин"><br>
+			<input class="entryField" type="login" name="phone" placeholder="Он будет использован как логин"><br>
 			<p class="miniHeader">Пароль:</p>
 			<input class="entryField" type="password" name="password" placeholder="Пароль (От 8 до 20 символов)" value=""><br>
 			<input class="entryField" type="password" name="reppassword" placeholder="Подтвердите пароль" value=""><br>

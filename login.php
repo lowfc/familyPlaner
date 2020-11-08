@@ -1,11 +1,12 @@
 <?php
-require 'db.php';
+require 'logout.php';
 if (isset($_POST['go_log'])){  
     $try_login = R::findOne('reggedusers', 'phone = ?', array($_POST['phone']));
     if ( $try_login ){
         if (password_verify($_POST['password'], $try_login->password)) 
 		{ 
 				$_SESSION['logged_user'] = $try_login;
+				$_SESSION['logged_user']->greeting = 1;
 				header('Location: /lk.php');
         }
         else{
