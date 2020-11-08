@@ -15,6 +15,8 @@
             <input class="entryField" type="password" name="newpassword" placeholder="Новый пароль" value=""><br>
             <p class="miniHeader">Подтвердите, что это Вы:</p>
 			<input class="entryField" type="password" name="oldpassword" placeholder="Текущий пароль" value=""><br>
-        <button class='regButton' type="submit" value="send">Применить</button>
+            <div class="block_elems">
+                <button class='regButton' type="submit" value="send">Применить</button>
+            </div>
     </form>
 </div>
