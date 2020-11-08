@@ -2,6 +2,14 @@
 require 'db.php';
 if (isset($_SESSION['logged_user'])) : ?>
 
+<?php
+
+if (isset($_GET['prof_sett']))
+{
+    require 'profile_settings.php';
+}
+
+?>
 <link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <?php if($_SESSION['logged_user']->greeting == 1) : ?>
@@ -10,13 +18,7 @@ if (isset($_SESSION['logged_user'])) : ?>
 </div>
 <script src="notifProcessor.js"></script>
 <?php $_SESSION['logged_user']->greeting = 0; endif; ?>
-<!--
-<form method="post" action="basic.php" enctype="multipart/form-data">
-<label for="inputfile">Upload File</label>
-<input type="file" id="inputfile" name="inputfile"></br>
-<input type="submit" value="Click To Upload">
-</form>
--->
+
 
 <div class='leftBlock'>
     <div class = 'divisor'>
@@ -29,9 +31,13 @@ if (isset($_SESSION['logged_user'])) : ?>
         $_SESSION['logged_user']->middle_name;
         ?></p>
     </div>
-    <a class='out'>Управление учетными записями</a>
-    <a class='out'>Настройка профиля</a>
-    <a class='out'>Загрузка отчетов</a>
-    <a class='out' href='logout.php'>Выйти</a>
+    <form action='lk.php'>
+        <a class='out'>Управление учетными записями</a>
+        <button class='regButton' name='prof_sett' type = 'submit'>Настройка профиля</a>
+        <a class='out'>Загрузка отчетов</a>
+        <a class='out' href='logout.php'>Выйти</a>
+    </form>
 </div>
+
+
 <?php else : require 'acess_failed.php'; endif;?>

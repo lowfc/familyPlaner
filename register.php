@@ -34,7 +34,7 @@ if (isset($db['go_reg']))
 		$tableUsers->phone = trim($db['phone']);
 		$tableUsers->password = password_hash($db['password'], PASSWORD_DEFAULT);
 		$tableUsers->family_status = trim($db['family_status']);
-		$tableUsers->deate_of_born = trim($db['date_of_born']);
+		$tableUsers->date_of_born = trim($db['date_of_born']);
 		$tableUsers->avat = '/res/avats/default.jpg';
 		$tableUsers->user_group = 'not confirmed';
 		R::store($tableUsers);
