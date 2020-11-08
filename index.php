@@ -9,5 +9,3 @@
 				<a class="btn_register" href="/login.php">Войти</a>
 			</div>
 		</div>
-</div>
-
