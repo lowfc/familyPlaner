@@ -8,7 +8,7 @@ if (!password_verify($d['oldpassword'], $send->password)) {
     <link rel='stylesheet' href='css/style.css'>
     <link href='https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@300&display=swap' rel='stylesheet'>
     <div class = 'errBlock'>
-    <p>Произошла ошибка</p>
+    <p>Неверно указан пароль</p>
     </div>
     <script src='notifProcessor.js'></script>
     <a href='/lk.php' style = 'color: green; margin: auto auto;'>Назад</a>
@@ -32,7 +32,7 @@ else{
     if (strlen(trim($d["newpassword"])) > 20 || strlen(trim($d["newpassword"])) < 8) { $errors[] = 'password'; }
     // Меняем поля
     if (!in_array('avat',$errors)) { $send->avat = '"/res/avats/'.$_FILES['inputfile']['name'].'"';}
-    if (!in_array('name',$errors)) { $send->name = $d['name']; echo isset($errors['name']); echo 'NAME HAS CHANCGED';}
+    if (!in_array('name',$errors)) { $send->name = $d['name']; echo isset($errors['name']);}
     if (!in_array('middle_name',$errors)) { $send->middle_name = $d['middle_name'];}
     if (!in_array('last_name',$errors)) { $send->last_name = $d['last_name']; }
     if (!in_array('family_status',$errors)) { $send->family_status = $d['family_status']; }
