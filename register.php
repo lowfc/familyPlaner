@@ -80,6 +80,6 @@ if (isset($db['go_reg']))
 			<input class="entryField" type="text" name="family_status" placeholder="Например: Мама" value=""><br>
 			<button class="regButton" name="go_reg" type="submit">Регистрация</button>
 		</form>
-		<a class="out" href="/index.php">Вернуться на главную</a><br><br><br>
+		<a class="bt" href="/login.php">Логин</a><br><br><br>
 	</div>
 </div>

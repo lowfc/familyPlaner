@@ -40,6 +40,6 @@ if (isset($_POST['go_log'])){
 			<input class="entryField" type="password" name="password" placeholder="Ваш пароль"><br>
 			<button class="regButton" name="go_log" type="submit">Войти</button>
 		</form>
-		<a class="btn_register" href="/index.php">Зарегистрироваться</a>
+		<a class="bt" href="/register.php">Зарегистрироваться</a>
 	</div>
 </div>
