@@ -32,9 +32,9 @@ if (isset($_GET['prof_sett']))
         ?></p>
     </div>
     <form action='lk.php'>
-        <button class='regButton' name='administration' type = 'submit'>Управление учетными записями</a>
+        <button disabled class='regButton' name='administration' type = 'submit'>Управление учетными записями</a>
         <button class='regButton' name='prof_sett' type = 'submit'>Настройка профиля</a>
-        <button class='regButton' name='report' type = 'submit'>Загрузка отчетов</a>
+        <button disabled class='regButton' name='report' type = 'submit'>Загрузка отчетов</a>
         <a class='out' href='logout.php'>Выйти</a>
     </form>
 </div>
