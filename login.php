@@ -29,6 +29,7 @@ if (isset($_POST['go_log'])){
 
 
 <link rel="stylesheet" href="css/style.css">
+<script src="notifProcessor.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <div class="bigBlock">       
 	<div class="f_center">
