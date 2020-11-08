@@ -14,7 +14,7 @@ if (isset($_GET['prof_sett']))
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <?php if($_SESSION['logged_user']->greeting == 1) : ?>
 <div class = 'succBlock'>
-    <p>Здравствуйте, <?php echo $_SESSION['logged_user']->name;?> !</p>
+    <p>Здравствуйте, <?php echo $_SESSION['logged_user']->name;?>!</p>
 </div>
 <script src="notifProcessor.js"></script>
 <?php $_SESSION['logged_user']->greeting = 0; endif; ?>
