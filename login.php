@@ -7,6 +7,8 @@ if (isset($_POST['go_log'])){
 		{ 
 				$_SESSION['logged_user'] = $try_login;
 				$_SESSION['logged_user']->greeting = 1;
+				if ($_POST['save']=='on') {$_SESSION['logged_user']->skip_pass = 1;}
+				else {$_SESSION['logged_user']->skip_pass = 0;}
 				header('Location: /lk.php');
         }
         else{
@@ -38,7 +40,12 @@ if (isset($_POST['go_log'])){
 			<p class="miniHeader">Телефон:</p>
 			<input class="entryField" type="text" name="phone" placeholder='Ваш логин'><br>
 			<p class="miniHeader">Пароль:</p>
-			<input class="entryField" type="password" name="password" placeholder="Ваш пароль"><br>
+			<input class="entryField" type="password" name="password" placeholder="Ваш пароль"><br><br>
+			<div style='display: flex; padding-left: 23%;'>
+			<input class='check'  type="checkbox" name="save" checked>
+			<br><br>
+			<p>Запомнить пароль</p><br>
+			</div>
 			<button class="regButton" name="go_log" type="submit">Войти</button>
 		</form>
 		<a class="bt" href="/register.php">Зарегистрироваться</a>

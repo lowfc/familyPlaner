@@ -11,6 +11,7 @@ html, body{
     -webkit-text-size-adjust: 100%;
     min-width: 1000px;
 }
+
 * {
 	font-size: 14px;
 	font-family: "Raleway";
@@ -109,7 +110,18 @@ button {
     width: 125px;
 }
 
+button:active {
+    transition: 0.25s;
+    font-size: 15px;
+}
+
 a:hover {
+    transition: 0.25s;
+    transform: scale(0.9);
+    font-size: 17px;
+}
+
+.bt:hover {
     transition: 0.25s;
     transform: scale(0.9);
     font-size: 17px;
@@ -199,9 +211,14 @@ input::-webkit-input-placeholder
     border: 0;
     font-size: 17px;
     border-radius: 30px;
-    background-color: white; 
+    background-color: rgba(255, 255, 255, 0); 
     height: 45px;
-    width: 200px;
+    width: 300px;
+}
+
+.check
+{
+    margin-right: 10px;
 }
 
 .form_auth{
@@ -229,7 +246,7 @@ input::-webkit-input-placeholder
 .leftBlock form {
     position: absolute;
     top: 50%;
-    left: 10%;
+    right: 10%;
     transform: translateY(-50%);
     background-color: #e0e0e0;
     width: 80%;
@@ -238,6 +255,7 @@ input::-webkit-input-placeholder
     max-width: 600px;
     border-radius: 10px;
     min-height: 800px;
+    max-height: 800px;
 }
 .rightBlock {
     position: relative;
@@ -259,6 +277,7 @@ input::-webkit-input-placeholder
     padding: 110px;
     border-radius: 10px;
     min-height: 800px;
+    max-height: 800px;
 }
 .rightBlock form input {
     width: 100%;
@@ -272,12 +291,41 @@ input::-webkit-input-placeholder
 .block_elems * {
     display: block;
 }
-/*@media (max-width: 1280px) {
-    .leftBlock, .rightBlock {
-        float: none;
-        width: 100%;
-    }
-}*/
+
+.header_logo{
+    width: 50px;
+    height: 50px;
+    margin: 4px -10px;
+}
+
+.avat_logo{
+    border-radius:100px; float: right;
+    width: 50px;
+    height: 50px;
+    margin: 4px 0;
+    float: right;
+}
+
+.name_header{
+    float: right;
+    margin: 25px 10px;
+    font-weight: bold;
+}
+
+.logo_a{
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.header{
+    width:100%;
+    height: 60px;
+    background-color: #e0e0e0;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 2px rgba(97, 97, 97, 0.274);
+    
+
+}
 
 .avatar{
     width: 150px;

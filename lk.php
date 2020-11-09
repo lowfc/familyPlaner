@@ -17,6 +17,14 @@ if (isset($_GET['prof_sett']))
 {
     require 'profile_settings.php';
 }
+else if (isset($_GET['administration']))
+{
+    echo '';
+}
+else if (isset($_GET['report']))
+{
+    echo '';
+}
 
 ?>
     <div class='leftBlock'>
@@ -32,10 +40,10 @@ if (isset($_GET['prof_sett']))
                 ?></p>
             </div>
             <div class="block_elems">
-                <button disabled class='regButton' name='administration' type = 'submit'>Управление учетными записями</a>
-                <button class='regButton' name='prof_sett' type = 'submit'>Настройка профиля</a>
-                <button disabled class='regButton' name='report' type = 'submit'>Загрузка отчетов</a>
-                <a class='out' href='logout.php'>Выйти</a>
+                <button class='bt' name='administration' type = 'submit'>Управление учетными записями</button>
+                <button class='bt' name='prof_sett' type = 'submit'>Настройка профиля</button>
+                <button class='bt' name='report' type = 'submit'>Загрузка отчетов</button>
+                <a class='bt' href='logout.php'>Выйти</a>
             </div>
         </form>
     </div>
