@@ -41,7 +41,14 @@ else{
     R::store($send); // Записываем
     $_SESSION['logged_user'] = $send; //Перезаписываем данные сессии
     $_SESSION['logged_user']->greeting = 0;
-    header('Location: /lk.php'); 
+    $_SESSION['logged_user']->skip_pass = 1;
+    if (in_array('password', $errors))
+    {
+        header('Location: /lk.php?pass_not_changed=1'); 
+    }
+    else{
+        header('Location: /lk.php'); 
+    }
 
 }
 

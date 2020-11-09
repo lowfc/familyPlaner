@@ -171,6 +171,11 @@ input::-webkit-input-placeholder
     height: 50px;
     border-radius: 10px;
     position: absolute;
+    text-align: center;
+    padding: 17px;
+    margin-top: 10px;
+    margin-left: 10px;
+    z-index: 2;
 }
 
 .errBlock > p{
@@ -190,6 +195,7 @@ input::-webkit-input-placeholder
     padding: 17px;
     margin-top: 10px;
     margin-left: 10px;
+    z-index: 2;
 }
 
 .succBlock > p{
