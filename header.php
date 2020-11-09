@@ -1,3 +1,4 @@
+<?php if (isset($_SESSION['logged_user'])) : ?>
 <head>
 		<title>Расчет бюджета</title>	
         <link rel="shortcut icon" href="res/logo.png" type="image/x-icon">
@@ -9,3 +10,4 @@
     <img class='avat_logo' src = <?php echo $_SESSION['logged_user']->avat?>>
 </div>
 </head>
+<?php else : require 'acess_failed.php'; endif;?>

@@ -1,4 +1,4 @@
-
+<?php if (isset($_SESSION['logged_user'])) : ?>
 <div class = 'rightBlock'>
     <form method="post" action="basic.php" enctype="multipart/form-data">
             <p class="miniHeader">Сменить фотографию:</p>
@@ -23,3 +23,4 @@
             </div>
     </form>
 </div>
+<?php else : require 'acess_failed.php'; endif;?>

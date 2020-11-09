@@ -15,7 +15,7 @@ if (isset($_GET['prof_sett']))
 }
 else if (isset($_GET['administration']))
 {
-    echo '';
+    require 'account_manager.php';
 }
 else if (isset($_GET['report']))
 {
@@ -30,7 +30,6 @@ else if ($_GET['pass_not_changed']==1)
 	";
 }
 ?>
-
 
     <div class='leftBlock'>
         <form action='lk.php'>
