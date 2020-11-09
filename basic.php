@@ -3,7 +3,7 @@ require 'db.php';
 $errors = array();
 $d = $_POST;
 $send = R::load('reggedusers', $_SESSION['logged_user']->id); // Загружаем запись db бд с нужным id
-if (!password_verify($d['oldpassword'], $send->password)) {
+if (!password_verify($d['oldpassword'], $send->password) && $_SESSION['logged_user']->skip_pass == 0) {
     echo "
     <link rel='stylesheet' href='css/style.css'>
     <link href='https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@300&display=swap' rel='stylesheet'>
