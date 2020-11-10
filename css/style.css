@@ -74,7 +74,7 @@ h1{
 .lk_logo, .lk_logo img
 {
     transition: .2s ease-in-out;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 0, 0, 1);
 }
 .lk_logo:hover
 {
