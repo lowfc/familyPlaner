@@ -173,8 +173,8 @@ input::-webkit-input-placeholder
     position: absolute;
     text-align: center;
     padding: 17px;
-    margin-top: 10px;
-    margin-left: 10px;
+    margin-top: 65px;
+    margin-left: 5px;
     z-index: 2;
 }
 
@@ -193,8 +193,8 @@ input::-webkit-input-placeholder
     position: absolute;
     text-align: center;
     padding: 17px;
-    margin-top: 10px;
-    margin-left: 10px;
+    margin-top: 65px;
+    margin-left: 5px;
     z-index: 2;
 }
 
@@ -260,8 +260,7 @@ input::-webkit-input-placeholder
     height: 80%;
     max-width: 600px;
     border-radius: 10px;
-    min-height: 800px;
-    max-height: 800px;
+    height: 650px;
 }
 .rightBlock {
     position: relative;
@@ -280,10 +279,9 @@ input::-webkit-input-placeholder
     min-width: 500px;
     max-width: 600px;
     height: 80%;
-    padding: 110px;
+    padding: 70px;
     border-radius: 10px;
-    min-height: 800px;
-    max-height: 800px;
+    height: 650px;
 }
 .rightBlock form input {
     width: 100%;
