@@ -25,7 +25,9 @@ header('Location: /login.php');
 </div>
 <br><br><br><br>
 <form action="not_confirmed.php" method="POST" style='width:320px;margin: 0 auto;'>
-    <p class="miniHeader">Если Вы ошиблись, Вы можете его сменить</p>
+    <p class="miniHeader">Если Вы ошиблись, Вы можете его сменить:</p>
     <input class="entryField" type="text" name="family_identifier" placeholder="Введите или придумайте" value=""><br>
     <button class="regButton" name="ch_fId" type="submit">Изменить</button>
 </form>
+<a class="bt" href="/">Выход</a><br><br><br>
+<script src="notifProcessor.js"></script>

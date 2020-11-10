@@ -73,18 +73,18 @@ if (isset($db['go_reg']))
 		<h1>Регистрация</h1>
 		<form action="register.php" method="POST">
 			<p class="miniHeader">Телефон:</p>
-			<input class="entryField" type="login" name="phone" placeholder="Он будет использован как логин"><br>
+			<input class="entryField" type="login" name="phone" placeholder="Он будет использован как логин" required><br>
 			<p class="miniHeader">Пароль:</p>
-			<input class="entryField" type="password" name="password" placeholder="Пароль (От 8 до 20 символов)" value=""><br>
-			<input class="entryField" type="password" name="reppassword" placeholder="Подтвердите пароль" value=""><br>
+			<input class="entryField" type="password" name="password" placeholder="Пароль (От 8 до 20 символов)" value="" required><br>
+			<input class="entryField" type="password" name="reppassword" placeholder="Подтвердите пароль" value="" required><br>
 			<p class="miniHeader">Ваши данные:</p>
-			<input class="entryField" type="text" name="last_name" placeholder="Фамилия" value=""><br>
-			<input class="entryField" type="text" name="name" placeholder="Имя" value=""><br>
+			<input class="entryField" type="text" name="last_name" placeholder="Фамилия" value="" required><br>
+			<input class="entryField" type="text" name="name" placeholder="Имя" value="" required><br>
 			<input class="entryField" type="text" name="middle_name" placeholder="Отчество (можно оставить пустым)" value=""><br>
 			<p class="miniHeader">Дата рождения:</p>
 			<input class="entryField" name="date_of_born" type="date" required><br>
 			<p class="miniHeader">Идентификатор Вашей семьи:</p>
-			<input class="entryField" type="text" name="family_identifier" placeholder="Введите или придумайте" value=""><br>
+			<input class="entryField" type="text" name="family_identifier" placeholder="Введите или придумайте" value="" required><br>
 			<button class="regButton" name="go_reg" type="submit">Регистрация</button>
 		</form>
 		<a class="bt" href="/login.php">Логин</a><br><br><br>
