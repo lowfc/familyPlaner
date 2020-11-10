@@ -8,6 +8,7 @@
     <a href="/lk.php" class='logo_a'><img class='header_logo' src='res/logo.png'></a>
     <p class='name_header'><?php echo $_SESSION['logged_user']->name?></p>
     <img class='avat_logo' src = <?php echo $_SESSION['logged_user']->avat?>>
+    <p class='name_header'><?php echo $_SESSION['logged_user']->family_identifier; ?></p>
 </div>
 </head>
 <?php else : require 'acess_failed.php'; endif;?>

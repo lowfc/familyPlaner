@@ -23,7 +23,7 @@ if (isset($db['go_reg']))
 	if (trim($db["password"]) == '') {$errors[] = "Заполните поле пароль.";}
 	else if (strlen(trim($db["password"])) > 20) {$errors[] = "Пароль слишком длинный.";}
 	else if (strlen(trim($db["password"])) < 8) {$errors[] = "Пароль слишком короткий.";}
-	if (trim($db["family_status"]) == '') {$errors[] = "Заполните поле статус.";}
+	if (trim($db["family_identifier"]) == '') {$errors[] = "Заполните идентификатор семьи.";}
 	if (trim($db["date_of_born"]) == '') {$errors[] = "Заполните дату рождения.";}
 
 	if (empty($errors)){
@@ -33,10 +33,17 @@ if (isset($db['go_reg']))
 		$tableUsers->middle_name = trim($db['middle_name']);
 		$tableUsers->phone = trim($db['phone']);
 		$tableUsers->password = password_hash($db['password'], PASSWORD_DEFAULT);
-		$tableUsers->family_status = trim($db['family_status']);
+		$tableUsers->family_identifier = trim($db['family_identifier']);
 		$tableUsers->date_of_born = trim($db['date_of_born']);
 		$tableUsers->avat = '/res/avats/default.jpg';
-		$tableUsers->user_group = 'not confirmed';
+		if (R::find('reggedusers', 'family_identifier LIKE ?' , [$db["family_identifier"]]))
+		{
+			$tableUsers->user_group = 'not_confirmed';
+		}
+		else{
+			$tableUsers->user_group = 'earner';
+		}
+		
 		R::store($tableUsers);
 		echo "
 				<div class = 'succBlock'>
@@ -76,8 +83,8 @@ if (isset($db['go_reg']))
 			<input class="entryField" type="text" name="middle_name" placeholder="Отчество (можно оставить пустым)" value=""><br>
 			<p class="miniHeader">Дата рождения:</p>
 			<input class="entryField" name="date_of_born" type="date" required><br>
-			<p class="miniHeader">Роль в Семье:</p>
-			<input class="entryField" type="text" name="family_status" placeholder="Например: Мама" value=""><br>
+			<p class="miniHeader">Идентификатор Вашей семьи:</p>
+			<input class="entryField" type="text" name="family_identifier" placeholder="Введите или придумайте" value=""><br>
 			<button class="regButton" name="go_reg" type="submit">Регистрация</button>
 		</form>
 		<a class="bt" href="/login.php">Логин</a><br><br><br>

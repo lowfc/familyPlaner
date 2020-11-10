@@ -27,7 +27,6 @@ else{
     if ($d['name'] == $_SESSION['logged_user']->name || trim($d['name']) == ''){ $errors[] = 'name'; }
     if ($d['middle_name'] == $_SESSION['logged_user']->middle_name || trim($d['middle_name']) == ''){ $errors[] = 'middle_name'; }
     if ($d['last_name'] == $_SESSION['logged_user']->last_name || trim($d['last_name']) == ''){ $errors[] = 'last_name'; }
-    if ($d['family_status'] == $_SESSION['logged_user']->family_status || trim($d['family_status']) == ''){ $errors[] = 'family_status'; }
     if ($d['date_of_born'] == $_SESSION['logged_user']->date_of_born || trim($d['date_of_born']) == ''){ $errors[] = 'date_of_born'; }
     if (strlen(trim($d["newpassword"])) > 20 || strlen(trim($d["newpassword"])) < 8) { $errors[] = 'password'; }
     // Меняем поля
@@ -35,20 +34,13 @@ else{
     if (!in_array('name',$errors)) { $send->name = $d['name']; echo isset($errors['name']);}
     if (!in_array('middle_name',$errors)) { $send->middle_name = $d['middle_name'];}
     if (!in_array('last_name',$errors)) { $send->last_name = $d['last_name']; }
-    if (!in_array('family_status',$errors)) { $send->family_status = $d['family_status']; }
     if (!in_array('date_of_born',$errors)) { $send->date_of_born = $d['date_of_born']; }
     if (!in_array('password', $errors)) { $send->password = password_hash($d['newpassword'], PASSWORD_DEFAULT); }
     R::store($send); // Записываем
     $_SESSION['logged_user'] = $send; //Перезаписываем данные сессии
     $_SESSION['logged_user']->greeting = 0;
     $_SESSION['logged_user']->skip_pass = 1;
-    if (in_array('password', $errors))
-    {
-        header('Location: /lk.php?pass_not_changed=1'); 
-    }
-    else{
-        header('Location: /lk.php'); 
-    }
+    header('Location: /lk.php'); 
 
 }
 

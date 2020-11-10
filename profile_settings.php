@@ -10,10 +10,10 @@
             <input class="entryField" type="text" name="middle_name" placeholder="Отчество (можно оставить пустым)" value="<?php echo $_SESSION['logged_user']->middle_name; ?>"><br>
             <p class="miniHeader">Дата рождения:</p>
 			<input class="entryField" name="date_of_born" type="date" value = "<?php echo $_SESSION['logged_user']->date_of_born; ?>"><br>
-			<p class="miniHeader">Роль в Семье:</p>
-            <input class="entryField" type="text" name="family_status" placeholder="Например: Мама" value= "<?php echo $_SESSION['logged_user']->family_status; ?>"><br>
+			<p class="miniHeader">Идентификатор семьи:</p>
+            <input disabled class="entryField" type="text" name="family_identifier" placeholder="" value= "<?php echo $_SESSION['logged_user']->family_identifier; ?>"><br>
             <p class="miniHeader">Сменить пароль:</p>
-            <input class="entryField" type="password" name="newpassword" placeholder="Новый пароль" value=""><br>
+            <input class="entryField" type="password" name="newpassword" placeholder="Новый пароль (от 8 до 20 символов)" value=""><br>
             <?php if ($_SESSION['logged_user']->skip_pass == 0) : ?>
                 <p class="miniHeader">Подтвердите, что это Вы:</p>
                 <input class="entryField" type="password" name="oldpassword" placeholder="Текущий пароль" value=""><br>
