@@ -1,3 +1,4 @@
+<?php if (isset($_SESSION['logged_user'])) : ?>
 <?php 
 require 'db.php';
 $succeful = TRUE;
@@ -34,3 +35,4 @@ if (isset($_POST['send']))
 }
 
 ?>
+<?php else : require 'acess_failed.php'; endif;?>

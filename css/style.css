@@ -71,6 +71,20 @@ h1{
     text-align: center;
     padding-top: 20px;
 }
+.lk_logo, .lk_logo img
+{
+    transition: .2s ease-in-out;
+    background-color: rgba(255, 255, 255, 0);
+}
+.lk_logo:hover
+{
+    color: rgb(128, 128, 128);
+}
+
+.lk_logo:hover img
+{
+    transform: scale(.95);
+}
 
 .miniheader
 {

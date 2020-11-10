@@ -6,9 +6,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <div class='header'>
     <a href="/lk.php" class='logo_a'><img class='header_logo' src='res/logo.png'></a>
-    <p class='name_header'><?php echo $_SESSION['logged_user']->name?></p>
-    <img class='avat_logo' src = <?php echo $_SESSION['logged_user']->avat?>>
-    <p class='name_header'><?php echo $_SESSION['logged_user']->family_identifier; ?></p>
+    <a href="/lk.php" class='lk_logo'>
+        <p class='name_header'><?php echo $_SESSION['logged_user']->name?></p>
+        <img class='avat_logo' src = <?php echo $_SESSION['logged_user']->avat?>>
+        <p class='name_header'><?php echo $_SESSION['logged_user']->family_identifier; ?></p>
+    </a>
 </div>
 </head>
 <?php else : require 'acess_failed.php'; endif;?>
