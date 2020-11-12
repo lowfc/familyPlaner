@@ -1,6 +1,5 @@
-<?php if (isset($_SESSION['logged_user'])) : ?>
+<?php require 'db.php'; if (isset($_SESSION['logged_user'])) : ?>
 <?php 
-require 'db.php';
 $succeful = TRUE;
 if (isset($_POST['send']))
 {

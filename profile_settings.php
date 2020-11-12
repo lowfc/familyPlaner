@@ -2,8 +2,8 @@
 <div class = 'rightBlock'>
     <form method="post" action="basic.php" enctype="multipart/form-data">
             <p class="miniHeader">Сменить фотографию:</p>
-            <label for="inputfile"></label>
-            <input type="file" id="inputfile" name="inputfile"><br><br>
+            <input type="file" class="inputfile" name="inputfile">
+            <br><br>
             <p class="miniHeader">Ваши данные:</p>
             <input class="entryField" type="text" name="last_name" placeholder="Фамилия" value="<?php echo $_SESSION['logged_user']->last_name; ?>"><br>
             <input class="entryField" type="text" name="name" placeholder="Имя" value="<?php echo $_SESSION['logged_user']->name; ?>"><br>

@@ -63,7 +63,6 @@ h1{
     margin-left: 50px;
     border-radius: 15px;
 }
-
 .regHeader
 {
     color: black;
@@ -74,7 +73,9 @@ h1{
 .lk_logo, .lk_logo img
 {
     transition: .2s ease-in-out;
-    background-color: rgba(255, 0, 0, 1);
+}
+.lk_logo{
+    margin-left: -100px;
 }
 .lk_logo:hover
 {
