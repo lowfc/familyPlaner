@@ -1,5 +1,11 @@
-<?php require 'db.php'; require 'header.php';?>
+<?php require 'db.php'; require 'header.php'; require 'murder.php'?>
 <?php if (isset($_SESSION['logged_user'])): ?>
+<?php
+if (isset($_POST['del']))
+{
+    kill($_POST['id'],'expenditurecategory');
+}
+?>
 <h1>Категории расходов</h1>
 <div style='margin: 0 auto;'>
     <form action="category_sender.php" method="POST">
@@ -23,10 +29,14 @@ $send = R::find('expenditurecategory', 'family_identifier LIKE ?' , [$_SESSION["
 foreach ($send as $i)
 {
     echo "
+    <form action='expenditure_category.php' method='post'>
     <div class='miniCard'>
+    <input type='hidden' name='id' value='{$i->id}' autocomplete='off'>
     <center> <b> $i->category_name </b> ($i->importance к.в.) </center> <br>
     <center><i>$i->discription</i> </center>
+    <button class='regButton' name='del' type='submit'>Удалить</button>
     </div>
+    </form>
     ";
 }
 ?>

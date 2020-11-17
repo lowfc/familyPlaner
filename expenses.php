@@ -1,5 +1,11 @@
-<?php require 'db.php'; require 'header.php';?>
+<?php require 'db.php'; require 'header.php'; require 'murder.php'?>
 <?php if (isset($_SESSION['logged_user'])): ?>
+<?
+if (isset($_POST['del']))
+{
+    kill($_POST['id'],'expenses');
+}
+?>
 <h1>Расходы</h1>
 <div style='margin: 0 auto;'>
     <form action="expenses_sender.php" method="POST">
@@ -37,11 +43,15 @@ foreach ($send as $i)
     $init = R::findOne('reggedusers', 'id LIKE ?' , [$i->expenses_initiator_id]);
     $cat = R::findOne('expenditurecategory', 'id LIKE ?' , [$i->expenses_category]);
     echo "
+    <form action='expenses.php' method='post'>
     <div class='miniCard'>
     <center> <b> $i->amount_expenses руб.</b> ($i->date_expenses) </center> <br>
     <center><i>$init->last_name $init->name</i> </center> <br>
     <center>$cat->category_name</center>
+    <input type='hidden' name='id' value='{$i->id}'>
+    <button class='regButton' name='del' type='submit'>Удалить</button>
     </div>
+    </form>
     ";
 }
 ?>
