@@ -1,11 +1,6 @@
 <?php require 'db.php'; require 'header.php'; require 'murder.php'?>
 <?php if (isset($_SESSION['logged_user'])): ?>
-<?php
-if (isset($_POST['del']))
-{
-    kill($_POST['id'],'expenditurecategory');
-}
-?>
+
 <h1>Категории расходов</h1>
 <div style='margin: 0 auto;'>
     <form action="category_sender.php" method="POST">
@@ -29,12 +24,17 @@ $send = R::find('expenditurecategory', 'family_identifier LIKE ?' , [$_SESSION["
 foreach ($send as $i)
 {
     echo "
-    <form action='expenditure_category.php' method='post'>
+    <form action='edit_exp_cat.php' method='post'>
     <div class='miniCard'>
     <input type='hidden' name='id' value='{$i->id}' autocomplete='off'>
     <center> <b> $i->category_name </b> ($i->importance к.в.) </center> <br>
     <center><i>$i->discription</i> </center>
+    <input type='hidden' name='id' value='{$i->id}'>
+    <input type='hidden' name='name' value='{$i->category_name}'>
+    <input type='hidden' name='class' value='{$i->importance}'>
+    <input type='hidden' name='discription' value='{$i->discription}'>
     <button class='regButton' name='del' type='submit'>Удалить</button>
+    <button class='regButton' name='change_tape' type='submit'>Изменить</button>
     </div>
     </form>
     ";

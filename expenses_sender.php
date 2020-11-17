@@ -3,6 +3,7 @@ require 'db.php';
 if (isset($_POST['add_expenses']))
 {
     $tableRev = R::dispense('expenses');
+    $tableRev->name = $_POST['name'];
     $tableRev->amount_expenses = $_POST['amount'];
     $tableRev->date_expenses = $_POST['date_expenses'];
     $tableRev->expenses_initiator_id = $_POST['initiator'];
