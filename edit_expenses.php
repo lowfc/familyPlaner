@@ -7,6 +7,7 @@ if (isset($_POST['del']))
 if (isset($_POST['edit_expenses']))
 {
     $tableRev = R::findOne('expenses', 'id LIKE ?' , [$_POST['id']]);
+    $tableRev->name = $_POST['name'];
     $tableRev->amount_expenses = $_POST['amount'];
     $tableRev->date_expenses = $_POST['date_expenses'];
     $tableRev->expenses_initiator_id = $_POST['initiator'];
@@ -20,7 +21,7 @@ if (isset($_POST['edit_expenses']))
         <form action="edit_expenses.php" method="POST">
             <input type='hidden' name='id' value="<?echo $_POST['id']?>">
                 <p class="miniHeader">Изменение названия расхода:</p>
-                <input class="entryField" type="text" name="name" placeholder="Название" value="<?echo $_POST['amount']?>" required>
+                <input class="entryField" type="text" name="name" placeholder="Название" value="<?echo $_POST['name']?>" required>
                 <p class="miniHeader">Изменение суммы расхода:</p>
                 <input class="entryField" type="text" name="amount" placeholder="Сумма (руб.)" value="<?echo $_POST['amount']?>" required>
                 <p class="miniHeader">Изменение даты расхода:</p>

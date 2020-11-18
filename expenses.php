@@ -45,6 +45,7 @@ foreach ($send as $i)
     <center>$i->name, <b> $i->amount_expenses руб.</b> ($i->date_expenses) </center> <br>
     <center><i>$init->last_name $init->name</i> </center> <br>
     <center>$cat->category_name</center>
+    <input type='hidden' name='name' value='{$i->name}'>
     <input type='hidden' name='id' value='{$i->id}'>
     <input type='hidden' name='amount' value='{$i->amount_expenses}'>
     <input type='hidden' name='date' value='{$i->date_expenses}'>
