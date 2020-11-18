@@ -7,8 +7,9 @@
 <div class='header'>
     <a href="/lk.php" class='logo_a'><img class='header_logo' src='res/logo.png'></a>
     <a href="/expenditure_category.php" class='head_a'>Категории расходов</a>
-    <a href="/revenue.php" class='head_a_1'>Доходы</a>
-    <a href="/expenses.php" class='head_a_2'>Расходы</a>
+    <a href="/revenue.php" class='head_a_2'>Доходы</a>
+    <a href="/expenses.php" class='head_a_1'>Расходы</a>
+    <a href="/revenue_category.php" class='head_a_3'>Категории доходов</a>
     <a href="/lk.php" class='lk_logo'>
         <p class='name_header'><?php echo $_SESSION['logged_user']->name?></p>
         <img class='avat_logo' src = <?php echo $_SESSION['logged_user']->avat?>>
