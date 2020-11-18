@@ -17,6 +17,16 @@
                     }
                 ?>
                 </select>
+                <p class="miniHeader">Класс дохода:</p>
+                <select name='class'>
+                <?php 
+                    $send = R::find('revenuecategory', 'family_identifier LIKE ?' , [$_SESSION["logged_user"]->family_identifier]);
+                    foreach ($send as $s)
+                    {
+                        echo "<option value=$s->id>$s->name</option>";
+                    }
+                ?>
+                </select>
                 <button class="regButton" name="add_revenue" type="submit">Добавить</button>
         </form>
     </div>
@@ -25,11 +35,13 @@ $send = R::find('revenue', 'family_identifier LIKE ?' , [$_SESSION["logged_user"
 foreach ($send as $i)
 {
     $init = R::findOne('reggedusers', 'id LIKE ?' , [$i->revenue_initiator_id]);
+    $init2 = R::findOne('revenuecategory', 'id LIKE ?' , [$i->category_id]);
     echo "
     <form action='edit_revenue.php' method='post'>
     <div class='miniCard'>
     <center> <b> $i->amount_revenue руб.</b> ($i->date_revenue) </center> <br>
-    <center><i>$init->last_name $init->name</i> </center>
+    <center><i>$init->last_name $init->name</i> </center>  <br>
+    <center>$init2->name </center>
     <input type='hidden' name='id' value='{$i->id}'>
     <input type='hidden' name='amount' value='{$i->amount_revenue}'>
     <input type='hidden' name='date' value='{$i->date_revenue}'>
