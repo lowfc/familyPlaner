@@ -6,7 +6,7 @@
                 <p class="miniHeader">Сумма дохода:</p>
                 <input class="entryField" type="text" name="amount" placeholder="Сумма (руб.)" required>
                 <p class="miniHeader">Дата дохода:</p>
-                <input class="entryField" name="date_revenue" type="date" required>
+                <input class="entryField" name="date_revenue" type="date" id="ss_2" required>
                 <p class="miniHeader">Инициатор дохода:</p>
                 <select name='initiator'>
                 <?php 
@@ -17,7 +17,7 @@
                     }
                 ?>
                 </select>
-                <p class="miniHeader">Класс дохода:</p>
+                <p class="miniHeader" id="fd">Класс дохода:</p>
                 <select name='class'>
                 <?php 
                     $send = R::find('revenuecategory', 'family_identifier LIKE ?' , [$_SESSION["logged_user"]->family_identifier]);
@@ -27,7 +27,7 @@
                     }
                 ?>
                 </select>
-                <button class="regButton" name="add_revenue" type="submit">Добавить</button>
+                <button class="regButton" name="add_revenue" type="submit" id="kn_2">Добавить</button>
         </form>
     </div>
 <?php
@@ -38,7 +38,7 @@ foreach ($send as $i)
     $init2 = R::findOne('revenuecategory', 'id LIKE ?' , [$i->category_id]);
     echo "
     <form action='edit_revenue.php' method='post'>
-    <div class='miniCard'>
+    <div class='miniCard' id='rya'>
     <center> <b> $i->amount_revenue руб.</b> ($i->date_revenue) </center> <br>
     <center><i>$init->last_name $init->name</i> </center>  <br>
     <center>$init2->name </center>
@@ -47,7 +47,7 @@ foreach ($send as $i)
     <input type='hidden' name='date' value='{$i->date_revenue}'>
     <input type='hidden' name='INITname' value='{$init->name} {$init->last_name}'>
     <input type='hidden' name='INITid' value='{$init->id}'>
-    <button class='regButton' name='del' type='submit'>Удалить</button>
+    <button class='regButton' name='del' type='submit' id='dl'>Удалить</button>
     <button class='regButton' name='change_tape' type='submit'>Изменить</button>
     </div>
     </form>

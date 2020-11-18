@@ -8,7 +8,7 @@
 			<input class="entryField" type="text" name="category_name" placeholder="Название категории" required>
 			<p class="miniHeader">Описание:</p>
             <input class="entryField" type="text" name="discription" placeholder="Описание категории" required>
-			<button class="regButton" name="add_category" type="submit">Добавить</button>
+			<button class="regButton" name="add_category" type="submit" id="bb">Добавить</button>
 	</form>
 </div>
 <?php
@@ -17,14 +17,14 @@ foreach ($send as $i)
 {
     echo "
     <form action='edit_rev_cat.php' method='post'>
-    <div class='miniCard'>
+    <div class='miniCard' id='rya'>
     <input type='hidden' name='id' value='{$i->id}'>
     <center> <b> $i->name </b></center> <br>
     <center><i>$i->discription</i> </center>
     <input type='hidden' name='id' value='{$i->id}'>
     <input type='hidden' name='name' value='{$i->name}'>
     <input type='hidden' name='discription' value='{$i->discription}'>
-    <button class='regButton' name='del' type='submit'>Удалить</button>
+    <button class='regButton' name='del' type='submit' id='dl'>Удалить</button>
     <button class='regButton' name='change_tape' type='submit'>Изменить</button>
     </div>
     </form>
