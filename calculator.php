@@ -112,6 +112,14 @@ if (isset($_POST['setCount']))
         ?>
         ><?echo $BUDGET - $TRAT + $ZARABOT;?></td>
     </tr>
+    <tr>
+        <td>Начало выбранного периода</td> 
+        <td><?echo $_POST['of_date'];?></td>
+    </tr>
+    <tr>
+        <td>Конец выбранного периода</td> 
+        <td><?echo $_POST['to_date'];?></td>
+    </tr>
 </table>
 
 
