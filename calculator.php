@@ -49,10 +49,10 @@ if (isset($_POST['setCount']))
 <form ACTION = 'calculator.php' method='POST'>
 <div style='display:flex; padding-top: auto; margin: 0 auto; width:650px;'>
 <p class='p_flex'>Показать в период с</p>
-<input class="entryField" name="of_date" type="date" style='width: 150px;' required>
+<input class="entryField" id="hh" name="of_date" type="date" style='width: 150px;' required>
 <p class='p_flex'>по</p>
 <input class="entryField" name="to_date" type="date" style='width: 150px;' required>
-<button name='setCount' type='submit'>Отобразить</button>
+<button name='setCount' type='submit' id='ssd'>Отобразить</button>
 </div>
 </form>
 <?php if (isset($bool)): ?>
@@ -61,16 +61,16 @@ if (isset($_POST['setCount']))
     <tr>
         <td>Бюджет по наступлению выбранного периода</td> 
         <td <?
-        if ($BUDGET < 0) {echo 'style="background: red;"';}
-        else if ($BUDGET == 0) {echo 'style="background: yellow;"';}
-        else {echo 'style="background: green;"';}
+        if ($BUDGET < 0) {echo 'style="background: #ff6666;"';}
+        else if ($BUDGET == 0) {echo 'style="background: #ffd633;"';}
+        else {echo 'style="background: #8aff8a;"';}
         ?>><?echo $BUDGET;?> рублей</td>
     </tr>
     <tr>
         <td>Заработок за выбранный период</td> 
         <td <?
-        if ($BUDGET == 0) {echo 'style="background: red;"';}
-        else {echo 'style="background: green;"';}
+        if ($BUDGET == 0) {echo 'style="background: #ff6666;"';}
+        else {echo 'style="background: #8aff8a;"';}
         ?>
         ><?echo $ZARABOT;?> рублей</td>
     </tr>
@@ -79,8 +79,8 @@ if (isset($_POST['setCount']))
         >Траты за выбранный период</td> 
         <td
         <?
-        if ($TRAT>$ZARABOT) {echo 'style="background: red;"';}
-        else {echo 'style="background: green;"';}
+        if ($TRAT>$ZARABOT) {echo 'style="background: #ff6666;"';}
+        else {echo 'style="background: #8aff8a;"';}
         ?>
         ><?echo $TRAT;?> рублей</td>
     </tr>
@@ -88,9 +88,9 @@ if (isset($_POST['setCount']))
         <td>Средний класс важности трат за период</td> 
         <td
         <?
-        if ($AV_CLASS >= 4) {echo 'style="background: green;"';}
-        else if ($AV_CLASS < 4 and $AV_CLASS > 2.5) {echo 'style="background: yellow;"';}
-        else {echo 'style="background: red;"';}
+        if ($AV_CLASS >= 4) {echo 'style="background: #8aff8a;"';}
+        else if ($AV_CLASS < 4 and $AV_CLASS > 2.5) {echo 'style="background: #ffd633;"';}
+        else {echo 'style="background: #ff6666;"';}
         ?>
         ><?echo round($AV_CLASS, 2);?></td>
     </tr>
@@ -106,9 +106,9 @@ if (isset($_POST['setCount']))
         <td>ИТОГО бюджет на конец периода</td> 
         <td
         <?
-        if ($BUDGET - $TRAT + $ZARABOT > 0 ) {echo 'style="background: green;"';}
-        else if ($BUDGET - $TRAT + $ZARABOT == 0) {echo 'style="background: yellow;"';}
-        else {echo 'style="background: red;"';}
+        if ($BUDGET - $TRAT + $ZARABOT > 0 ) {echo 'style="background: #8aff8a;"';}
+        else if ($BUDGET - $TRAT + $ZARABOT == 0) {echo 'style="background: #ffd633;"';}
+        else {echo 'style="background: #ff6666;"';}
         ?>
         ><?echo $BUDGET - $TRAT + $ZARABOT;?> рублей</td>
     </tr>
