@@ -35,7 +35,7 @@ if (isset($db['go_reg']))
 		$tableUsers->password = password_hash($db['password'], PASSWORD_DEFAULT);
 		$tableUsers->family_identifier = trim($db['family_identifier']);
 		$tableUsers->date_of_born = trim($db['date_of_born']);
-		$tableUsers->avat = '/res/avats/2.jpg';
+		$tableUsers->avat = '/res/avats/default.jpg';
 		if (R::find('reggedusers', 'family_identifier LIKE ?' , [$db["family_identifier"]]))
 		{
 			$tableUsers->user_group = 'not_confirmed';

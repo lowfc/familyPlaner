@@ -12,24 +12,24 @@ if (isset($_POST['setCount']))
     $TRAT = 0;
     $TRAT_С = 0;
     $AV_CLASS = 0;
-    $query = R::getAll('SELECT amount_revenue FROM revenue WHERE date_revenue <="'.$_POST['of_date'].'"');
+    $query = R::getAll('SELECT amount_revenue FROM revenue WHERE date_revenue <="'.$_POST['of_date'].'" AND family_identifier = "'.$_SESSION["logged_user"]->family_identifier.'"');
     foreach ($query as $i)
     {
         $ALLREV+=$i['amount_revenue'];
     }  
-    $query = R::getAll('SELECT amount_expenses FROM expenses WHERE date_expenses <="'.$_POST['of_date'].'"');
+    $query = R::getAll('SELECT amount_expenses FROM expenses WHERE date_expenses <="'.$_POST['of_date'].'" AND family_identifier = "'.$_SESSION["logged_user"]->family_identifier.'"');
     foreach ($query as $i)
     {
         $EXPERIOD += $i['amount_expenses'];
     }   
     $BUDGET = $ALLREV - $EXPERIOD;
-    $query = R::getAll('SELECT amount_revenue FROM revenue WHERE date_revenue >="'.$_POST['of_date'].'"'.' AND date_revenue <="'.$_POST['to_date'].'"');
+    $query = R::getAll('SELECT amount_revenue FROM revenue WHERE date_revenue >="'.$_POST['of_date'].'"'.' AND date_revenue <="'.$_POST['to_date'].'" AND family_identifier = "'.$_SESSION["logged_user"]->family_identifier.'"');
     foreach ($query as $i)
     {
         $ZARABOT += $i['amount_revenue'];
         $ZARABOT_С ++;
     } 
-    $query = R::getAll('SELECT amount_expenses FROM expenses WHERE date_expenses >="'.$_POST['of_date'].'"'.' AND date_expenses <="'.$_POST['to_date'].'"');
+    $query = R::getAll('SELECT amount_expenses FROM expenses WHERE date_expenses >="'.$_POST['of_date'].'"'.' AND date_expenses <="'.$_POST['to_date'].'" AND family_identifier = "'.$_SESSION["logged_user"]->family_identifier.'"');
     foreach ($query as $i)
     {
         $TRAT += $i['amount_expenses'];
@@ -41,7 +41,7 @@ if (isset($_POST['setCount']))
         $send = R::findOne('expenditurecategory', 'family_identifier LIKE :ident AND id LIKE :id' , [':ident'=>$_SESSION["logged_user"]->family_identifier,':id'=>$i['expenses_category']]);
         $AV_CLASS+=$send->importance;
     } 
-    $AV_CLASS /= $TRAT_С;
+    if ($TRAT_С != 0) {$AV_CLASS /= $TRAT_С;} else {$AV_CLASS = 0;}
 }
 ?>
 
@@ -110,7 +110,7 @@ if (isset($_POST['setCount']))
         else if ($BUDGET - $TRAT + $ZARABOT == 0) {echo 'style="background: yellow;"';}
         else {echo 'style="background: red;"';}
         ?>
-        ><?echo $BUDGET - $TRAT + $ZARABOT;?></td>
+        ><?echo $BUDGET - $TRAT + $ZARABOT;?> рублей</td>
     </tr>
     <tr>
         <td>Начало выбранного периода</td> 
