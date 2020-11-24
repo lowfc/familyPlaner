@@ -71,6 +71,14 @@ h1{
     margin-right: 15px;
     margin-left: 15px;
 }
+table{
+    border-spacing: 0px;
+    border-collapse: collapse;
+  }
+th {border: 1px solid black;}
+/* границы ячеек тела таблицы */
+td {border: 1px solid black; padding: 5px;}
+/* границы ячеек первого ряда таблицы */
 .head_a_2{
     position: absolute;
     background-color: rgba(240, 73, 73, 0);

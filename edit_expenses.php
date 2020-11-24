@@ -3,6 +3,7 @@
 if (isset($_POST['del']))
 {
     kill($_POST['id'],'expenses');
+    header("Location: /expenses.php");
 }
 if (isset($_POST['edit_expenses']))
 {
