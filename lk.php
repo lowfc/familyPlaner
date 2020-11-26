@@ -18,7 +18,7 @@ else if (isset($_GET['administration']))
 }
 else if (isset($_GET['report']))
 {
-    echo '';
+    require 'reply_processor.php';
 }
 ?>
 
