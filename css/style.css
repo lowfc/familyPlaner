@@ -51,6 +51,19 @@ h1{
     font-size: 35px;
 }
 
+table {
+    position: relative;
+    margin: 0 auto;
+}
+
+#hh{
+    margin-bottom: 100px;
+}
+
+#ssd {
+    margin-left: 14px;
+}
+
 .head_a{
     position: absolute;
     background-color: rgba(240, 73, 73, 0);
@@ -95,7 +108,7 @@ td {border: 1px solid black; padding: 5px;}
     position: absolute;
     background-color: rgba(240, 73, 73, 0);
     margin-top: 5px;
-    margin-left: 600px;
+    margin-left: 597px;
 }
 
 .f_center {
@@ -480,3 +493,4 @@ input::-webkit-input-placeholder
 .minicard {
     margin-top: 20px;
 }
+
