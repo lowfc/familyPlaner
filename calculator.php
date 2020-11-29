@@ -69,7 +69,7 @@ if (isset($_POST['setCount']))
     <tr>
         <td>Заработок за выбранный период</td> 
         <td <?
-        if ($BUDGET == 0) {echo 'style="background: #ff6666;"';}
+        if ($ZARABOT < $TRAT) {echo 'style="background: #ff6666;"';}
         else {echo 'style="background: #8aff8a;"';}
         ?>
         ><?echo $ZARABOT;?> рублей</td>
