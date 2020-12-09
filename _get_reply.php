@@ -60,7 +60,7 @@ else if (isset($_GET['expenses'])) {
 else if (isset($_GET['revenuecategory'])) {
 	get_csv_customers('revenuecategory');
 }
-else if (isset($_GET['expensescategory'])) {
-	get_csv_customers('expensescategory');
+else if (isset($_GET['expenditurecategory'])) {
+	get_csv_customers('expenditurecategory');
 }
 ?>
